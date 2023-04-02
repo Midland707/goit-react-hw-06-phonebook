@@ -5,15 +5,18 @@ import css from './ContactItem.module.css';
 
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  <li className={css.contactItem}>
-    {name}: {number}
-    <button
-      className={css.deleteButton}
-      onClick={() => dispatch(deleteContacts(id))}
-    >
-      Delete
-    </button>
-  </li>;
+
+  return (
+    <li className={css.contactItem}>
+      {name}: {number}
+      <button
+        className={css.deleteButton}
+        onClick={() => dispatch(deleteContacts(id))}
+      >
+        Delete
+      </button>
+    </li>
+  );
 };
 
 ContactItem.propTypes = {
