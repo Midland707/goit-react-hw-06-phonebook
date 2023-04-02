@@ -2,14 +2,6 @@ import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
 import css from './Filter.module.css';
 
-// const onFilterByName = eventFilter => {
-//   return eventFilter.target.value.toLowerCase().trim();
-// };
-
-// const filterContacts = contacts.filter(contact =>
-//   contact.name.toLocaleLowerCase().includes(filter)
-// );
-
 export const Filter = () => {
   const dispatch = useDispatch();
   return (

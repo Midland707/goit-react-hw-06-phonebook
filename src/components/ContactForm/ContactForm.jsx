@@ -9,7 +9,6 @@ import css from './ContactForm.module.css';
 export function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
   const dispatch = useDispatch();
 
   const onChangeHandel = event => {
