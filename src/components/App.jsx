@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
+import { useDispatch } from 'react-redux';
+
 import css from './App.module.css';
 export function App() {
+  const dispatch = useDispatch();
   const [contacts, setContacts] = useState([]);
   const [filter, setFilter] = useState('');
 
@@ -27,8 +30,7 @@ export function App() {
   };
 
   const onFilterByName = eventFilter => {
-    const filterValue = eventFilter.target.value.toLowerCase().trim();
-    setFilter(filterValue);
+    return eventFilter.target.value.toLowerCase().trim();
   };
 
   const onClickDelete = idDelete => {
