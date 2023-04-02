@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/contactsSlice';
 import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
-export function ContactForm({ onSubmitForm }) {
+export function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const dispatch = useDispatch();
 
   const onChangeHandel = event => {
     const { name, value } = event.currentTarget;
@@ -22,7 +26,9 @@ export function ContactForm({ onSubmitForm }) {
 
   const handleSubmit = eventSubmit => {
     eventSubmit.preventDefault();
-    onSubmitForm(makeContact(), eventSubmit.target);
+    // onSubmitForm(makeContact(), eventSubmit.target);
+    console.log('makeContact = ', makeContact());
+    // dispatch(addContact(makeContact()));
   };
 
   return (
